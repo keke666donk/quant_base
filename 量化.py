@@ -1,0 +1,12 @@
+import tushare as ts
+pro = ts.pro_api("620d5af00fee0cd9bc908b5f2d0bf44ffeaad14b85deece54134a8e5")
+df = pro.daily(ts_code="000001.SZ", start_date="20260101", end_date="20260831")
+print(df.head())
+print(df.shape)
+df=df.set_index("trade_date")
+df=df.sort_index()
+df.to_csv("stock_000001.csv")
+print(df.head())
+print(df.loc["20260106"])
+cond=(df["close"]>11.6)&(df["vol"]>900000)
+print(df[cond])

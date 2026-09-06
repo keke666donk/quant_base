@@ -1,0 +1,12 @@
+#虚拟环境
+quant_env/
+
+#python缓存
+__pycache__/
+*.pyc
+
+#csv数据文件不上传
+*.csv
+
+#防止tushare密钥泄露
+*.token
